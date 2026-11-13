@@ -1,0 +1,77 @@
+# Regras de acessibilidade para usuários 60+
+# Baseadas em WCAG 2.1 e diretrizes de usabilidade para idosos
+# ------------------------------------------------------------
+
+percepcao:
+  - id: "PERC-001"
+    descricao: "Tamanho de fonte inferior a 16px"
+    limiar: 16
+    unidade: "px"
+    severidade: "alta"
+    sugestao: "Utilizar tamanho mínimo de 16px para corpo de texto; preferir 18px ou superior."
+
+  - id: "PERC-002"
+    descricao: "Contraste de cor insuficiente (abaixo de 4.5:1)"
+    limiar: 4.5
+    unidade: "ratio"
+    severidade: "alta"
+    sugestao: "Garantir contraste mínimo de 4.5:1 para texto normal e 3:1 para texto grande (WCAG AA)."
+
+  - id: "PERC-003"
+    descricao: "Alvos de clique menores que 44px"
+    limiar: 44
+    unidade: "px"
+    severidade: "media"
+    sugestao: "Aumentar o tamanho dos alvos de toque/clique para no mínimo 44x44px."
+
+operacao:
+  - id: "OPER-001"
+    descricao: "Ausência de navegação por teclado"
+    severidade: "alta"
+    sugestao: "Garantir que todos os elementos interativos sejam acessíveis via Tab, Enter e Esc."
+
+  - id: "OPER-002"
+    descricao: "Gestos complexos sem alternativa simples"
+    severidade: "media"
+    sugestao: "Fornecer alternativas de clique/toque simples para gestos como pinch, swipe e drag."
+
+  - id: "OPER-003"
+    descricao: "Ausência de links de salto (skip links)"
+    severidade: "media"
+    sugestao: "Adicionar link 'Pular para o conteúdo principal' no início de cada página."
+
+compreensao:
+  - id: "COMP-001"
+    descricao: "Uso excessivo de jargão técnico"
+    severidade: "media"
+    sugestao: "Substituir termos técnicos por linguagem simples ou fornecer glossário acessível."
+
+  - id: "COMP-002"
+    descricao: "Índice de legibilidade Flesch abaixo de 50"
+    limiar: 50
+    unidade: "score"
+    severidade: "alta"
+    sugestao: "Reescrever textos para atingir índice Flesch ≥ 50 (frases curtas, vocabulário simples)."
+
+  - id: "COMP-003"
+    descricao: "Mensagens de erro sem orientação de correção"
+    severidade: "alta"
+    sugestao: "Incluir em cada mensagem de erro uma instrução clara de como resolver o problema."
+
+fluxo:
+  - id: "FLUX-001"
+    descricao: "Navegação profunda com mais de 3 níveis"
+    limiar: 3
+    unidade: "niveis"
+    severidade: "media"
+    sugestao: "Reduzir a profundidade de navegação para no máximo 3 níveis a partir da página inicial."
+
+  - id: "FLUX-002"
+    descricao: "Ausência de breadcrumbs (trilha de migalhas)"
+    severidade: "baixa"
+    sugestao: "Implementar breadcrumbs visíveis em todas as páginas internas."
+
+  - id: "FLUX-003"
+    descricao: "Layout inconsistente entre páginas"
+    severidade: "media"
+    sugestao: "Padronizar cabeçalhos, menus e rodapés em todas as páginas para manter consistência visual."

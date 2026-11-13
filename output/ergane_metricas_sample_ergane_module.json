@@ -1,0 +1,129 @@
+{
+  "arquivo": "sample_ergane_module.py",
+  "metricas_documentacao": {
+    "cobertura_docstrings": 75.0,
+    "indice_flesch": 2.98,
+    "tamanho_medio_frases": 11.83,
+    "jargoes_detectados": [
+      "api",
+      "backend",
+      "payload"
+    ],
+    "clareza_nomes": 91.67
+  },
+  "metricas_estruturais": {
+    "complexidade_media": 2.25,
+    "complexidade_maxima": 4,
+    "detalhe_funcoes_cc": [
+      {
+        "nome": "emitir_recibo_rapido",
+        "linha": 11,
+        "complexidade": 4
+      },
+      {
+        "nome": "calcular_imposto_simples",
+        "linha": 27,
+        "complexidade": 2
+      },
+      {
+        "nome": "verificar_conexao_gateway_pix",
+        "linha": 35,
+        "complexidade": 2
+      },
+      {
+        "nome": "render_tela_recibo",
+        "linha": 45,
+        "complexidade": 1
+      }
+    ],
+    "tags_semanticas": [
+      "button",
+      "footer",
+      "h1",
+      "header",
+      "label",
+      "main",
+      "section"
+    ],
+    "indice_semantico": 0.88,
+    "consistencia_nomes": 1.0,
+    "mensagens_erro_problematicas": [
+      "Trecho 'Dados inválidos: campo obrigatório não preenchido': Mensagem vaga ('Dados inválidos') que não indica qual campo está incorreto.",
+      "Trecho 'Internal Server Error: falha no banco de dados': Erro técnico de infraestrutura ('Falha no banco') exposto ao usuário.",
+      "Trecho 'Internal Server Error: falha no banco de dados': Jargão técnico em inglês ('Internal Server Error') que assusta usuários idosos.",
+      "Trecho 'operation failed: valor não pode ser zero': Mensagem em inglês sem tradução ou dica de ação."
+    ],
+    "loc": 56
+  },
+  "predicoes_60plus": [
+    {
+      "tipo": "percepção",
+      "severidade": "alta",
+      "arquivo": "tela_front.html",
+      "descricao": "Elementos interativos (botões/campos) identificados sem especificação explícita de tamanho mínimo de alvo (44x44px) ou contraste de cores (mínimo 4.5:1).",
+      "sugestao_correcao": "Definir padding amplo para garantir alvos de clique ≥ 44x44px e aplicar contraste mínimo de 4.5:1 no texto contra o fundo (WCAG 2.2 nível AA)."
+    },
+    {
+      "tipo": "operação",
+      "severidade": "media",
+      "arquivo": "modulo.py",
+      "descricao": "Ausência de link de salto ('Pular para o conteúdo principal') e de tag <nav>. Usuários que navegam por teclado precisam pressionar Tab repetidamente até o conteúdo.",
+      "sugestao_correcao": "Adicionar link de salto no início da tela e estruturar menus dentro da tag <nav>."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "app.py",
+      "descricao": "Índice de legibilidade Flesch (2.98) abaixo do limite seguro (50.0). Textos de ajuda e documentação estão excessivamente densos para o público 60+.",
+      "sugestao_correcao": "Reescrever os textos com frases curtas (máximo 15 palavras) e vocabulário direto do dia a dia."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "app.py",
+      "descricao": "Presença de termos técnicos prejudiciais na interface/documentação: [api, backend, payload].",
+      "sugestao_correcao": "Substituir termos como 'payload', 'backend', 'timeout' por palavras como 'dados', 'sistema' e 'tempo de espera'."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "app.py",
+      "descricao": "Foram detectadas 4 mensagens de erro inadequadas (técnicas ou vagas).",
+      "sugestao_correcao": "Adotar o catálogo de erros simplificados do Agente 1, com título amigável e passos de solução."
+    },
+    {
+      "tipo": "fluxo",
+      "severidade": "media",
+      "arquivo": "modulo.py",
+      "descricao": "Fluxo de formulário/transação sem indicador visual de progresso (breadcrumbs ou etapas 1 de 3). Usuários 60+ perdem o senso de orientação sem saber quanto falta para concluir.",
+      "sugestao_correcao": "Adicionar barra de progresso simples com passos numerados e botão explícito 'Voltar para a etapa anterior'."
+    }
+  ],
+  "validacao_testes": {
+    "total_casos": 10,
+    "casos_tecnicos": {
+      "total": 5,
+      "sucessos": 5,
+      "tempo_medio_s": 37.26,
+      "meta_s": 60.0,
+      "conformidade_meta": true
+    },
+    "casos_financeiros": {
+      "total": 5,
+      "sucessos": 5,
+      "tempo_medio_s": 58.65,
+      "meta_s": 90.0,
+      "conformidade_meta": true
+    },
+    "taxa_acerto_predicoes_percentual": 85.0
+  },
+  "gestao_prioridades": [
+    "[ERG-102] Tratamento amigável para falha de pagamento PIX (P1)",
+    "[ERG-106] Validação com máscara clara para CNPJ de 14 dígitos (P2)",
+    "[ERG-107] Aviso preventivo de faturamento anual MEI (P3)",
+    "[ERG-103] Implementar navegação completa por teclado no checkout (P4)",
+    "[ERG-101] Aumentar contraste de botões de ação para 4.5:1 (P5)",
+    "[ERG-105] Correção de mensagem técnica de timeout na consulta de CEP (P6)",
+    "[ERG-104] Nova animação 3D de transição no dashboard (P7)"
+  ]
+}

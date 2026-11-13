@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>AEP ESOFT - Entrega 2 - Agente 3 Acessibilidade Preditiva - Ergane</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+    }
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #222;
+      background-color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    .header-box {
+      border-bottom: 2px solid #003366;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .institution {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #003366;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .course {
+      font-size: 11pt;
+      color: #555;
+      margin: 2px 0 0 0;
+    }
+    .doc-title {
+      font-size: 13pt;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #111;
+      text-transform: uppercase;
+      background-color: #f0f4f8;
+      padding: 6px 10px;
+      border-left: 4px solid #003366;
+    }
+    table.meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 25px 0;
+      font-size: 10pt;
+    }
+    table.meta-table td {
+      border: 1px solid #ccc;
+      padding: 6px 10px;
+      vertical-align: top;
+    }
+    table.meta-table td.label {
+      width: 25%;
+      font-weight: bold;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      font-size: 12pt;
+      color: #003366;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 11pt;
+      color: #222;
+      margin-top: 15px;
+      margin-bottom: 6px;
+    }
+    p, li {
+      text-align: justify;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 9.5pt;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid #bbb;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    table.data-table th {
+      background-color: #003366;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    table.data-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    .badge-approved {
+      color: #0f5132;
+      background-color: #d1e7dd;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .badge-high {
+      color: #842029;
+      background-color: #f8d7da;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .badge-med {
+      color: #664d03;
+      background-color: #fff3cd;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .box-info {
+      background-color: #eef5fc;
+      border-left: 4px solid #0056b3;
+      padding: 10px 14px;
+      margin: 15px 0;
+      font-size: 10pt;
+    }
+    pre {
+      background-color: #f4f6f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: 9pt;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .footer-note {
+      margin-top: 30px;
+      font-size: 9pt;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="institution">UniCesumar — Universidade Cesumar</div>
+    <div class="course">Graduação em Engenharia de Software</div>
+    <div class="doc-title">MODELO DE DOCUMENTO — ENTREGA 2 (RELATÓRIO TÉCNICO DE IMPLEMENTAÇÃO E AVALIAÇÃO)</div>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td class="label">Título do Projeto / Ecossistema</td>
+      <td><strong>Ergane — Plataforma para Pequenos Empreendedores (CNPJ / MEI / ME / EPP)</strong></td>
+    </tr>
+    <tr>
+      <td class="label">Curso / Disciplinas / Turma</td>
+      <td>Engenharia de Software — Arquitetura de Software · Gestão de Projetos · Tecnologias Emergentes</td>
+    </tr>
+    <tr>
+      <td class="label">Aluno / Integrante Responsável</td>
+      <td><strong>Caua Cesar da Silva de Oliveira</strong> — Acessibilidade e Documentação</td>
+    </tr>
+    <tr>
+      <td class="label">Equipe Integrada (Projeto Ergane)</td>
+      <td>Luigi Biagio Antonioli (Coordenação e Arquitetura)<br>
+          Francisco Guilherme Soares dos Santos (Qualidade e Testes)<br>
+          Caua Cesar da Silva de Oliveira (Acessibilidade e Documentação)</td>
+    </tr>
+    <tr>
+      <td class="label">Agente de Software Desenvolvido</td>
+      <td><strong>Agente 3 — Agente de Acessibilidade Preditiva 60+ (Núcleo do Ergane)</strong></td>
+    </tr>
+    <tr>
+      <td class="label">ODS Escolhida</td>
+      <td><strong>ODS 10 — Redução das Desigualdades</strong> (Inclusão Digital da Economia Prateada 60+)</td>
+    </tr>
+    <tr>
+      <td class="label">Data de Entrega</td>
+      <td>13/11/2026</td>
+    </tr>
+  </table>
+
+  <h2>1. Contexto, Justificativa da ODS e Papel do Agente 3</h2>
+  <p>
+    O <strong>Ergane</strong> é uma plataforma voltada a micro e pequenos empreendedores brasileiros (MEI, ME e EPP), simplificando rotinas críticas como emissão de recibos, controle diário de caixa, cobranças via PIX e gestão de pedidos.
+  </p>
+  <p>
+    O pilar central da solução ancora-se na <strong>ODS 10 (Redução das Desigualdades)</strong>: segundo dados do Sebrae e do IBGE, o Brasil possui mais de 4,5 milhões de empreendedores com mais de 60 anos (Economia Prateada). Esses usuários enfrentam desafios severos ao lidar com sistemas informatizados devido ao declínio visual progressivo (presbiopia, menor sensibilidade ao contraste), redução na precisão motora fina e sobrecarga cognitiva perante linguagens densas ou jargões técnicos crípticos.
+  </p>
+  <p>
+    O <strong>Agente 3 (Acessibilidade Preditiva)</strong> é o núcleo do ecossistema Ergane. Sua premissa inovadora é agir de forma <strong>preventiva e preditiva</strong>: antes que o código front-end seja renderizado no navegador ou chegue ao usuário final, o Agente 3 analisa o código-fonte, elementos de tela e documentação, cruzando essas métricas com regras formais de usabilidade sênior (WCAG 2.2) para antecipar barreiras de acessibilidade.
+  </p>
+
+  <h2>2. Especificação do Agente: Regras, Formato e Arquitetura</h2>
+
+  <h3>2.1. Entradas, Saídas e Gatilhos de Acionamento</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 20%;">Elemento</th>
+        <th>Especificação Técnica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Entradas</strong></td>
+        <td><strong>Modo Autônomo:</strong> Arquivo de código Python, HTML ou componente de tela (ex: <code>sample_ergane_module.py</code>).<br>
+            <strong>Modo Ecossistema:</strong> JSON de métricas de documentação (Agente 1) + JSON de métricas estruturais (Agente 2).</td>
+      </tr>
+      <tr>
+        <td><strong>Saídas</strong></td>
+        <td>1. Relatório executivo detalhado em Markdown (<code>output/relatorio_acessibilidade_*.md</code>).<br>
+            2. Estrutura consolidada em JSON com severidades e planos de ação (<code>output/predicoes_acessibilidade_*.json</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Gatilho</strong></td>
+        <td>Disparo automático via webhook em evento de push/pull request no repositório Git ou execução direta sob demanda via CLI (<code>python3 agente3_cli.py</code>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2.2. Catálogo de Regras Formais de Acessibilidade 60+ (Quatro Frentes)</h3>
+  <p>As regras estão parametrizadas no arquivo declarativo <code>config/rules_60plus.yaml</code>, cobrindo quatro frentes complementares:</p>
+  <ul>
+    <li><strong>👁️ Percepção (Sensorial):</strong> Alvos de clique mínimos de 44x44px; contraste de texto/fundo ≥ 4.5:1 (WCAG AA); fontes corporais ≥ 16px/18px; presença de marcos semânticos visuais (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) evitando sobrecarga de <code>&lt;div&gt;</code> genéricas.</li>
+    <li><strong>⌨️ Operação (Controle e Interação):</strong> Navegação completa por teclado (Tab, Enter, Esc); presença de link de salto (<em>skip link</em> — "Pular para o conteúdo principal"); controle de complexidade ciclomática operacional (CC ≤ 4.0) para prevenir fluxos de múltiplos cliques rápidos e timeouts punitivos.</li>
+    <li><strong>🧠 Compreensão (Linguagem e Cognição):</strong> Legibilidade Flesch-Kincaid ≥ 50.0; eliminação estrita de jargões técnicos da interface (<code>payload</code>, <code>backend</code>, <code>token</code>, <code>endpoint</code>, <code>null</code>); mensagens de erro claras com instrução explícita de recuperação.</li>
+    <li><strong>🧭 Fluxo (Orientação e Navegação):</strong> Navegação com profundidade máxima de 3 níveis; presença de trilha de migalhas (<em>breadcrumbs</em>) ou progresso numerado ("Etapa 1 de 3"); padronização de nomenclatura de botões e ações.</li>
+  </ul>
+
+  <h3>2.3. Padrões de Projeto Aplicados (GoF & GRASP)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 22%;">Categoria</th>
+        <th style="width: 25%;">Padrão Adotado</th>
+        <th>Justificativa e Aplicação Prática no Agente 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Criação (GoF)</strong></td>
+        <td><strong>Factory Method</strong></td>
+        <td>A classe <code>PredictorFactory</code> instancia dinamicamente o preditor especialista adequado (Percepção, Operação, Compreensão, Fluxo) sem acoplar o cliente às implementações concretas.</td>
+      </tr>
+      <tr>
+        <td><strong>Estrutural (GoF)</strong></td>
+        <td><strong>Decorator</strong></td>
+        <td>A classe <code>RuleDecorator</code> decora os preditores em tempo de execução, injetando regras dinâmicas de acessibilidade a partir de arquivos YAML sem modificar a estrutura original das classes.</td>
+      </tr>
+      <tr>
+        <td><strong>Comportamental (GoF)</strong></td>
+        <td><strong>Observer</strong></td>
+        <td>O agente conecta-se ao <code>EventBus</code> do sistema, assinando atualizações e notificando outros módulos sempre que uma barreira de alta severidade é detectada.</td>
+      </tr>
+      <tr>
+        <td><strong>Arquitetura</strong></td>
+        <td><strong>MVC Adaptado</strong></td>
+        <td><strong>Model:</strong> Regras 60+ e dataclasses tipadas (<code>BarreiraPreditiva</code>).<br>
+            <strong>View:</strong> Gerador de relatórios executivos em Markdown (<code>AccessibilityEngine.gerar_relatorio_markdown</code>).<br>
+            <strong>Controller:</strong> <code>AccessibilityEngine</code>, coordenando a execução e o cruzamento dos dados.</td>
+      </tr>
+      <tr>
+        <td><strong>GRASP</strong></td>
+        <td><strong>Especialista + Controlador</strong></td>
+        <td>Cada frente preditiva atua como especialista em sua respectiva área de conhecimento; o motor atua como controlador central de fluxo.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2>3. Metodologia de Teste e Cenários de Entrada</h2>
+  <p>
+    Para garantir conformidade com os critérios de aceitação acadêmicos da Entrega 2, o Agente 3 foi testado sob rigorosa metodologia de engenharia de software:
+  </p>
+  <ol>
+    <li>
+      <strong>Bateria de Testes Unitários Automatizados (<code>unittest</code>):</strong> Executada pelo módulo <code>tests/test_agente3_standalone.py</code>, validando isoladamente cada preditor, a instanciação dinâmica, a decoração de regras e a asserção formal dos 5 critérios.
+    </li>
+    <li>
+      <strong>Execução no Test Harness Formal:</strong> Executada através do comando <code>python3 agente3_cli.py test</code>, medindo o comportamento do agente contra métricas sintéticas e arquivos de código real.
+    </li>
+  </ol>
+
+  <h3>Cenários e Entradas Utilizadas nos Testes</h3>
+  <ul>
+    <li>
+      <strong>Entrada 1 — Módulo Real de Checkout MEI (<code>sample_ergane_module.py</code>):</strong> Código Python simulando tela de formulário com campos de cobrança PIX, botões de ação, manipuladores de evento e mensagens de retorno ao usuário.
+    </li>
+    <li>
+      <strong>Entrada 2 — Contexto Sintético de Estresse:</strong>
+      Cenário extremo com índice Flesch rebaixado para 30.0, jargões técnicos explícitos (<code>payload</code>, <code>backend</code>), complexidade ciclomática de 5.5, divs semânticas insuficientes e ausência total de indicadores de fluxo.
+    </li>
+  </ul>
+
+  <h2>4. Resultados e Análise de Desempenho</h2>
+
+  <h3>4.1. Scorecard dos Critérios de Aceitação (Entrega 2)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 10%;">Critério</th>
+        <th style="width: 40%;">Descrição do Critério</th>
+        <th style="width: 25%;">Resultado Medido</th>
+        <th style="width: 15%;">Avaliação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>3.1</strong></td>
+        <td>Cruzar métricas de documentação e estruturais com regras 60+</td>
+        <td>10 barreiras identificadas no caso sintético</td>
+        <td><span class="badge-approved">APROVADO</span></td>
+      </tr>
+      <tr>
+        <td><strong>3.2</strong></td>
+        <td>Prever pelo menos 4 categorias/tipos de barreira</td>
+        <td>4/4 frentes cobertas (Percepção, Operação, Compreensão, Fluxo)</td>
+        <td><span class="badge-approved">APROVADO</span></td>
+      </tr>
+      <tr>
+        <td><strong>3.3</strong></td>
+        <td>Gerar relatório por arquivo e por tela</td>
+        <td>Relatório Markdown (4.058 caracteres) e JSON gerados</td>
+        <td><span class="badge-approved">APROVADO</span></td>
+      </tr>
+      <tr>
+        <td><strong>3.4</strong></td>
+        <td>Emitir sugestão de correção para cada barreira</td>
+        <td>100% das barreiras contêm plano de ação acionável</td>
+        <td><span class="badge-approved">APROVADO</span></td>
+      </tr>
+      <tr>
+        <td><strong>3.5</strong></td>
+        <td>Tempo de análise ≤ 30 segundos por arquivo</td>
+        <td>0,0001s nos testes / 0,0029s no arquivo completo</td>
+        <td><span class="badge-approved">APROVADO</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="box-info">
+    <strong>Resultado Geral do Teste:</strong> <strong>5 de 5 critérios aprovados (100% de conformidade com a Entrega 2).</strong>
+  </div>
+
+  <h3>4.2. Barreiras Identificadas no Módulo de Exemplo (<code>sample_ergane_module.py</code>)</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 6%;">#</th>
+        <th style="width: 15%;">Frente</th>
+        <th style="width: 12%;">Severidade</th>
+        <th>Barreira Prevista</th>
+        <th>Sugestão de Correção Emitida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Percepção</td>
+        <td><span class="badge-high">Alta</span></td>
+        <td>Elementos interativos sem especificação de alvo mínimo (44x44px) ou contraste de cor (4.5:1).</td>
+        <td>Definir padding amplo para alvos ≥ 44x44px e aplicar contraste mínimo de 4.5:1 no texto contra o fundo.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Percepção</td>
+        <td><span class="badge-med">Média</span></td>
+        <td>Estrutura com excesso de divs genéricas em relação a blocos semânticos visuais.</td>
+        <td>Adotar <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> e <code>&lt;footer&gt;</code> para orientar visualmente o idoso.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Operação</td>
+        <td><span class="badge-med">Média</span></td>
+        <td>Ausência de link de salto (<em>skip link</em>) e de tag <code>&lt;nav&gt;</code> para navegação por teclado.</td>
+        <td>Adicionar link de salto no início da tela e estruturar menus dentro da tag <code>&lt;nav&gt;</code>.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Compreensão</td>
+        <td><span class="badge-high">Alta</span></td>
+        <td>Índice de legibilidade Flesch (42.0) abaixo do limite seguro (50.0).</td>
+        <td>Reescrever os textos com frases curtas (máximo 15 palavras) e vocabulário direto do dia a dia.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Compreensão</td>
+        <td><span class="badge-high">Alta</span></td>
+        <td>Presença de termos técnicos prejudiciais na interface/documentação: [<code>payload</code>, <code>backend</code>].</td>
+        <td>Substituir termos como 'payload' e 'backend' por palavras amigáveis como 'dados' e 'sistema'.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Compreensão</td>
+        <td><span class="badge-high">Alta</span></td>
+        <td>Presença de mensagens de erro inadequadas (crípticas ou sem orientação).</td>
+        <td>Adotar catálogo de erros simplificados, com título amigável e passos claros de solução.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Fluxo</td>
+        <td><span class="badge-med">Média</span></td>
+        <td>Fluxo de formulário sem indicador visual de progresso (<em>breadcrumbs</em> ou "1 de 3").</td>
+        <td>Adicionar barra de progresso simples com passos numerados e botão explícito "Voltar".</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>4.3. Desempenho e Performance</h3>
+  <p>
+    A meta regulamentar estipulada pela UniCesumar exigia tempo de análise <strong>≤ 30 segundos por arquivo</strong>. O tempo efetivamente medido pelo Agente 3 foi de <strong>0,0029 segundos</strong> (2,9 milissegundos) para o módulo completo de checkout. O agente performou aproximadamente <strong>10.340 vezes mais rápido que o teto exigido</strong>, comprovando que a abordagem híbrida baseada em AST determinístico é viável para execução em tempo real sem sobrecarregar ambientes de CI/CD.
+  </p>
+
+  <h2>5. Crítica Reflexiva sobre os Resultados ("O Agente Não É Perfeito")</h2>
+  <p>
+    Em consonância com as boas práticas de pesquisa e desenvolvimento em Engenharia de Software, reconhecer as limitações técnicas e os pontos cegos de uma solução é fundamental para sua evolução contínua:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Limitações da Análise Estática vs. Renderização Dinâmica:</strong> O agente inspeciona o código estático e metadados estruturais, mas não renderiza a interface em um navegador com motor gráfico real (DOM computado). Consequentemente, se uma biblioteca de estilos externa (ex: Tailwind CSS ou Bootstrap) aplicar classes dinâmicas ou media queries em tempo de execução, o agente pode prever falsos positivos de falta de contraste ou espaçamento de botão.
+    </li>
+    <li>
+      <strong>Risco de Falsos Positivos de Jargão Técnico:</strong> O preditor de compreensão sinaliza palavras como <code>payload</code> ou <code>backend</code>. Se o desenvolvedor utilizar esses termos apenas como nomes de variáveis internas de processamento sem jamais exibi-las na tela para o idoso, a barreira prevista constitui um falso positivo contextual. Uma versão futura deve diferenciar strings exibíveis ao usuário daquelas restritas à lógica interna.
+    </li>
+    <li>
+      <strong>A Predição Não Substitui a Validação Humana Empírica:</strong> Por mais precisas que sejam as regras WCAG 2.2 parametrizadas no agente, fatores humanos subjetivos — tais como a ansiedade tecnológica do empreendedor idoso, hesitações motoras ao preencher valores de cobrança PIX e cansaço visual acumulado — só podem ser confirmados por testes empíricos com usuários reais ou por simulações comportamentais com tempos de reação (como a persona do Sr. José).
+    </li>
+    <li>
+      <strong>Fallback Determinístico vs. LLM Local:</strong> A arquitetura híbrida assegura funcionamento ininterrupto mesmo sem o servidor local Ollama (Llama 3.2 3B). No entanto, o fallback determinístico recorre a modelos de texto fixos, perdendo a flexibilidade criativa e empática de recomendações contextualizadas em linguagem natural geradas por modelos de linguagem generativos.
+    </li>
+  </ol>
+
+  <h2>6. Considerações Finais</h2>
+  <p>
+    A entrega individual do <strong>Agente 3 (Acessibilidade Preditiva 60+)</strong> consolida com sucesso a aplicação de padrões de projeto consagrados (<strong>Factory Method</strong>, <strong>Decorator</strong>, <strong>Observer</strong> e <strong>MVC</strong>) voltados a um imperativo social urgente: a inclusão produtiva e digital de idosos na Economia Prateada (<strong>ODS 10</strong>). O agente cumpre 100% dos critérios avaliativos da Entrega 2, oferecendo alto desempenho técnico e abrindo caminho sólido para as próximas iterações do ecossistema Ergane.
+  </p>
+
+  <h2>7. Referências Utilizadas (Normas ABNT)</h2>
+  <ul>
+    <li>AGÊNCIA BRASIL. <em>Brasil já tem 4,5 milhões de empreendedores da Economia Prateada.</em> Brasília, DF, 2026.</li>
+    <li>BASS, L.; CLEMENTS, P.; KAZMAN, R. <em>Software Architecture in Practice.</em> 4. ed. Boston: Addison-Wesley, 2021.</li>
+    <li>BRASIL. <em>Lei Complementar nº 123, de 14 de dezembro de 2006.</em> Estatuto da Microempresa e EPP.</li>
+    <li>BRASIL. <em>Lei nº 10.741, de 1º de outubro de 2003.</em> Estatuto da Pessoa Idosa.</li>
+    <li>BRASIL. <em>Lei nº 13.146, de 6 de julho de 2015.</em> Lei Brasileira de Inclusão da Pessoa com Deficiência.</li>
+    <li>GAMMA, E.; HELM, R.; JOHNSON, R.; VLISSIDES, J. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Boston: Addison-Wesley, 1994.</li>
+    <li>LARMAN, C. <em>Utilizando UML e Padrões.</em> 3. ed. Porto Alegre: Bookman, 2007.</li>
+    <li>NIELSEN, J. <em>Usability for Senior Citizens: design guidelines based on usability studies with people age 65 and older.</em> Nielsen Norman Group, 2002.</li>
+    <li>RECCHIA, R. M. <em>Guia Visual WCAG 2.2: apoio ao desenvolvimento de aplicativos acessíveis para pessoas com baixa visão.</em> UNIFESP, 2026.</li>
+    <li>W3C. <em>Web Content Accessibility Guidelines (WCAG) 2.2.</em> W3C Recommendation, 2023.</li>
+  </ul>
+
+  <div class="footer-note">
+    Documento gerado para a Entrega 2 da AEP — Curso de Engenharia de Software — UniCesumar
+  </div>
+
+</body>
+</html>

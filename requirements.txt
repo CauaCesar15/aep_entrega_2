@@ -1,0 +1,12 @@
+textstat
+radon
+pylint
+bandit
+flake8
+pyyaml
+pandas
+beautifulsoup4
+jinja2
+matplotlib
+requests
+ollama

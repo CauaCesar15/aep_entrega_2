@@ -1,0 +1,51 @@
+{
+  "arquivo": "sample_ergane_module.py",
+  "tempo_analise_segundos": 0.0073,
+  "conformidade_tempo": true,
+  "total_barreiras_previstas": 6,
+  "barreiras": [
+    {
+      "tipo": "percepção",
+      "severidade": "alta",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Elementos interativos (botões/campos) identificados sem especificação explícita de tamanho mínimo de alvo (44x44px) ou contraste de cores (mínimo 4.5:1).",
+      "sugestao_correcao": "Definir padding amplo para garantir alvos de clique ≥ 44x44px e aplicar contraste mínimo de 4.5:1 no texto contra o fundo (WCAG 2.2 nível AA)."
+    },
+    {
+      "tipo": "operação",
+      "severidade": "media",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Ausência de link de salto ('Pular para o conteúdo principal') e de tag <nav>. Usuários que navegam por teclado precisam pressionar Tab repetidamente até o conteúdo.",
+      "sugestao_correcao": "Adicionar link de salto no início da tela e estruturar menus dentro da tag <nav>."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Índice de legibilidade Flesch (42.0) abaixo do limite seguro (50.0). Textos de ajuda e documentação estão excessivamente densos para o público 60+.",
+      "sugestao_correcao": "Reescrever os textos com frases curtas (máximo 15 palavras) e vocabulário direto do dia a dia."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Presença de termos técnicos prejudiciais na interface/documentação: [payload, backend].",
+      "sugestao_correcao": "Substituir termos como 'payload', 'backend', 'timeout' por palavras como 'dados', 'sistema' e 'tempo de espera'."
+    },
+    {
+      "tipo": "compreensão",
+      "severidade": "alta",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Foram detectadas 5 mensagens de erro inadequadas (técnicas ou vagas).",
+      "sugestao_correcao": "Adotar o catálogo de erros simplificados do Agente 1, com título amigável e passos de solução."
+    },
+    {
+      "tipo": "fluxo",
+      "severidade": "media",
+      "arquivo": "sample_ergane_module.py",
+      "descricao": "Fluxo de formulário/transação sem indicador visual de progresso (breadcrumbs ou etapas 1 de 3). Usuários 60+ perdem o senso de orientação sem saber quanto falta para concluir.",
+      "sugestao_correcao": "Adicionar barra de progresso simples com passos numerados e botão explícito 'Voltar para a etapa anterior'."
+    }
+  ],
+  "relatorio_markdown": "# Relatório Preditivo de Acessibilidade 60+ — Ergane\n**Arquivo / Módulo analisado:** `sample_ergane_module.py`\n**ODS 10:** Redução das Desigualdades — Inclusão do Empreendedor Sênior\n\n## 1. Resumo Executivo das Predições\n- **Total de barreiras previstas:** 6\n- 🔴 **Alta severidade:** 4\n- 🟡 **Média severidade:** 2\n- 🟢 **Baixa severidade:** 0\n\n---\n\n## 2. Detalhamento por Frente de Acessibilidade\n### 👁️ Frente 1: Percepção (Contraste, Fontes, Tamanho de Alvos)\n#### Barreira 1 — Severidade: 🔴 ALTA\n- **Diagnóstico:** Elementos interativos (botões/campos) identificados sem especificação explícita de tamanho mínimo de alvo (44x44px) ou contraste de cores (mínimo 4.5:1).\n- **Sugestão de Correção Imediata:** Definir padding amplo para garantir alvos de clique ≥ 44x44px e aplicar contraste mínimo de 4.5:1 no texto contra o fundo (WCAG 2.2 nível AA).\n\n### ⌨️ Frente 2: Operação (Navegação por Teclado, Ritmo e Interação)\n#### Barreira 1 — Severidade: 🟡 MÉDIA\n- **Diagnóstico:** Ausência de link de salto ('Pular para o conteúdo principal') e de tag <nav>. Usuários que navegam por teclado precisam pressionar Tab repetidamente até o conteúdo.\n- **Sugestão de Correção Imediata:** Adicionar link de salto no início da tela e estruturar menus dentro da tag <nav>.\n\n### 🧠 Frente 3: Compreensão (Linguagem Clara, Jargões e Mensagens de Erro)\n#### Barreira 1 — Severidade: 🔴 ALTA\n- **Diagnóstico:** Índice de legibilidade Flesch (42.0) abaixo do limite seguro (50.0). Textos de ajuda e documentação estão excessivamente densos para o público 60+.\n- **Sugestão de Correção Imediata:** Reescrever os textos com frases curtas (máximo 15 palavras) e vocabulário direto do dia a dia.\n#### Barreira 2 — Severidade: 🔴 ALTA\n- **Diagnóstico:** Presença de termos técnicos prejudiciais na interface/documentação: [payload, backend].\n- **Sugestão de Correção Imediata:** Substituir termos como 'payload', 'backend', 'timeout' por palavras como 'dados', 'sistema' e 'tempo de espera'.\n#### Barreira 3 — Severidade: 🔴 ALTA\n- **Diagnóstico:** Foram detectadas 5 mensagens de erro inadequadas (técnicas ou vagas).\n- **Sugestão de Correção Imediata:** Adotar o catálogo de erros simplificados do Agente 1, com título amigável e passos de solução.\n\n### 🧭 Frente 4: Fluxo (Profundidade, Clareza e Previsibilidade)\n#### Barreira 1 — Severidade: 🟡 MÉDIA\n- **Diagnóstico:** Fluxo de formulário/transação sem indicador visual de progresso (breadcrumbs ou etapas 1 de 3). Usuários 60+ perdem o senso de orientação sem saber quanto falta para concluir.\n- **Sugestão de Correção Imediata:** Adicionar barra de progresso simples com passos numerados e botão explícito 'Voltar para a etapa anterior'.\n\n---\n## 3. Próximos Passos no Ciclo Ergane\n1. **Agente 4 (Testes Automatizados):** Submeter as barreiras ao teste de perfil sênior (Sr. José) para validar o tempo de recuperação.\n2. **Agente 5 (Gestão de Projeto):** Priorizar a resolução das barreiras de alta severidade no backlog da sprint."
+}

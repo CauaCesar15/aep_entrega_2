@@ -1,0 +1,18 @@
+# Configurações gerais do sistema Ergane
+# ----------------------------------------
+
+ollama:
+  model: "llama3.2:3b"
+  base_url: "http://localhost:11434"
+
+pipeline:
+  agents:
+    - 1  # Agente de Métricas de Documentação
+    - 2  # Agente de Métricas Estruturais
+    - 3  # Agente de Predição de Barreiras
+    - 4  # Agente de Validação
+    - 5  # Agente de Relatório de Gestão
+
+output_dir: "./output"
+
+log_level: "INFO"
